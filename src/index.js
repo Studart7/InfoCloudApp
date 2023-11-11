@@ -7,9 +7,11 @@ import reportWebVitals from './reportWebVitals';
 import Primeiro from './pages/Primeiro';
 import Segundo from './pages/Segundo';
 import Listagem from './pages/Listagem/Listagem';
-import SimpleMap from './components/Mapa/map';
+
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,7 +22,7 @@ root.render(
         <Route path='/' element={<Primeiro/>} />
         <Route path="segundo"element={<Segundo />} />
         <Route path="listagem"element={<Listagem />} />
-        <Route path="mapa"element={<SimpleMap />} />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
