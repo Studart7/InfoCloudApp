@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function PaginaTabela() {
   return (
     <div>
-      <h1>Minha Tabela</h1>
+      <h1>Tabela</h1>
       <Tabela />
       <Link to="/">Pagina Inicial</Link>
     </div>
