@@ -5,6 +5,7 @@ import PaginaTabela from './pages/PagTabela';
 import PaginaFormulario from './pages/PagFormulario';
 import PaginaInicial from './pages/PagInicial';
 import PaginaMapa from './pages/PagMapa';
+import PaginaGrafico from './pages/PagGrafico';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/tabela" element={<PaginaTabela />} />
           <Route path='/formulario' element={<PaginaFormulario />} />
           <Route path='/mapa' element={<PaginaMapa />} />
+          <Route path='/grafico' element={<PaginaGrafico />} />
           {/* Add more Route components for additional pages */}
         </Routes>
       </div>

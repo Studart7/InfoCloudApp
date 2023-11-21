@@ -1,5 +1,4 @@
 import React from "react";
-import MapComponent from "../components/Mapa/Mapa";
 import Mapa from "../components/Mapa/Mapa";
 import { Link } from 'react-router-dom';
 
