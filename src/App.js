@@ -7,6 +7,7 @@ import PaginaInicial from './pages/PaginaInicial/PagInicial';
 import PaginaMapa from './pages/PagMapa/PagMapa';
 import BarraLink from './components/BarraLinks/BarraLink';
 import PaginaSobreNos from './pages/PagSobreNos/PagSobreNos';
+import PaginaGrafico from './pages/PagGrafico/PagGrafico';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route path='/formulario' element={<PaginaFormulario />} />
           <Route path='/mapa' element={<PaginaMapa />} />
           <Route path='/sobre-nos' element={<PaginaSobreNos />} />
+          <Route path='/grafico' element={<PaginaGrafico />} />
+          
 
           {/* Add more Route components for additional pages */}
         </Routes>

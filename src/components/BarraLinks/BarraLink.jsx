@@ -17,6 +17,9 @@ const BarraLink = () => {
       <Link to="/mapa" className="link">
         Mapa
       </Link>
+      <Link to="/grafico" className="link">
+        Grafico
+      </Link>
       <Link to="/sobre-nos" className="link">
         Sobre Nós
       </Link>

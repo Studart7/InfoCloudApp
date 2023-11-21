@@ -9,13 +9,38 @@ body {
   }
   
   .pagina-sobre-nos {
-    text-align: center; /* Centralizar horizontalmente o conteúdo */
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
   }
-h1.texto {
+  
+  .equipe {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .membro-equipe {
     text-align: center;
-}
+    margin: 10px;
+  }
+  
+  .membro-equipe h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .membro-equipe p {
+    font-size: 16px;
+  }
+
+  .logo-equipe {
+    width: 50%; 
+    max-width: 400px; 
+    height: auto;
+    margin-bottom: 0px;
+  }
