@@ -5,7 +5,7 @@ import './styles.css';
 const BarraLink = () => {
   return (
     <nav className="barra-navegacao">
-        <Link to="/" className="link">
+        <Link to="/InfoCloudApp" className="link">
         Inicio
       </Link>
       <Link to="/tabela" className="link">
