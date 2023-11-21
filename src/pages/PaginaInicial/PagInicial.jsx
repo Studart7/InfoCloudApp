@@ -49,6 +49,17 @@ const PaginaInicial = () => {
         </div>
 
         <div className="imagem-container">
+          <Link to="/grafico">
+            <img
+              src="https://images.vexels.com/media/users/3/141613/isolated/preview/3a72deb308b1fdefd6ac915d9772df44-area-de-desenho-de-grafico.png"
+              alt="Ir para o Grafico"
+              className="imagem"
+            />
+            <p className="legenda">Ir para o Grafico</p>
+          </Link>
+        </div>
+
+        <div className="imagem-container">
           <Link to="/sobre-nos">
             <img
               src="https://perception.net.br/en/img/B/icons/quemsomos.png"
