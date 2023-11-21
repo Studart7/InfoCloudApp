@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Notice the change from Switch to Routes
+//import Tabela from './components/Tabela/Tabela';
+import PaginaTabela from './pages/PagTabela';
+import PaginaFormulario from './pages/PagFormulario';
+import PaginaInicial from './pages/PagInicial';
+import PaginaMapa from './pages/PagMapa';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <h1>Projeto Nimbus</h1>
+        <Routes>
+          <Route path="/" element={<PaginaInicial />} />
+          <Route path="/tabela" element={<PaginaTabela />} />
+          <Route path='/formulario' element={<PaginaFormulario />} />
+          <Route path='/mapa' element={<PaginaMapa />} />
+          {/* Add more Route components for additional pages */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
