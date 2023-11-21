@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './styles.css';
 
 const Formulario = () => {
@@ -101,7 +100,6 @@ const Formulario = () => {
           </div>
         </form>
       </div>
-      <Link to="/">Tela Inicial</Link>
     </div>
   );
 };

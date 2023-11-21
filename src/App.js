@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // No
 import PaginaTabela from './pages/PagTabela';
 import PaginaFormulario from './pages/PagFormulario';
 import PaginaInicial from './pages/PagInicial';
+import PaginaMapa from './pages/PagMapa';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<PaginaInicial />} />
           <Route path="/tabela" element={<PaginaTabela />} />
           <Route path='/formulario' element={<PaginaFormulario />} />
+          <Route path='/mapa' element={<PaginaMapa />} />
           {/* Add more Route components for additional pages */}
         </Routes>
       </div>
