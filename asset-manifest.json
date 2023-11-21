@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/InfoCloudApp/static/css/main.eaba61ed.css",
-    "main.js": "/InfoCloudApp/static/js/main.cdcc9217.js",
+    "main.css": "/InfoCloudApp/static/css/main.15597f2c.css",
+    "main.js": "/InfoCloudApp/static/js/main.acfb56cc.js",
     "static/js/787.e4ae1580.chunk.js": "/InfoCloudApp/static/js/787.e4ae1580.chunk.js",
     "index.html": "/InfoCloudApp/index.html",
-    "main.eaba61ed.css.map": "/InfoCloudApp/static/css/main.eaba61ed.css.map",
-    "main.cdcc9217.js.map": "/InfoCloudApp/static/js/main.cdcc9217.js.map",
+    "main.15597f2c.css.map": "/InfoCloudApp/static/css/main.15597f2c.css.map",
+    "main.acfb56cc.js.map": "/InfoCloudApp/static/js/main.acfb56cc.js.map",
     "787.e4ae1580.chunk.js.map": "/InfoCloudApp/static/js/787.e4ae1580.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.eaba61ed.css",
-    "static/js/main.cdcc9217.js"
+    "static/css/main.15597f2c.css",
+    "static/js/main.acfb56cc.js"
   ]
 }
