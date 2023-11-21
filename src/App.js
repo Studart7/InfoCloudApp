@@ -15,7 +15,7 @@ function App() {
       <div>
         <BarraLink/>
         <Routes>
-          <Route path="/" element={<PaginaInicial />} />
+          <Route path="/InfoCloudApp" element={<PaginaInicial />} />
           <Route path="/tabela" element={<PaginaTabela />} />
           <Route path='/formulario' element={<PaginaFormulario />} />
           <Route path='/mapa' element={<PaginaMapa />} />
