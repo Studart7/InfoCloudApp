@@ -25,7 +25,7 @@ const PaginaSobreNos = () => {
         </div>
 
         <div className="membro-equipe">
-          <h2>João Paulo Dopcke Vasconcelhos</h2>
+          <h2>João Paulo Dopcke Vasconcellos</h2>
           <p>Aluno do 4o período de Engenharia de Computação</p>
         </div>
 
