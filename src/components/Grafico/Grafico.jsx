@@ -105,8 +105,8 @@ const Grafico = () => {
   ];
 
   return (
-    <div style={{ width: '100%', margin: '0 auto', maxHeight: '500px', overflowY: 'auto' }}>
-      <div>
+    <div style={{ width: '100%', margin: '0 auto', maxHeight: '500px', overflowY: 'auto'}}>
+      <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.75)'}}>
       <canvas ref={referenciaDoGrafico} id="meuGrafico" width="400" height="400"></canvas>
       </div>
       <CSVLink

@@ -40,7 +40,6 @@ const Formulario = () => {
 
   return (
     <div>
-      <h2>Formulário de Requisição Meteorológica</h2>
       <div id="formulario">
         <form id="formRequisicao" onSubmit={handleSubmit}>
           <div className="row">

@@ -1,10 +1,11 @@
 #formulario {
     max-width: 600px;
     margin: 0 auto;
-    border: 2px solid #FFD700; /* Amarelo mais escuro */
+    border: 2px solid #eac70170; 
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
 .row {
@@ -35,7 +36,7 @@
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #FFD700; /* Amarelo mais escuro */
+    background-color: #ffd900b9; 
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 10px;
     z-index: 1;
@@ -54,3 +55,4 @@
 #botoes button {
     margin-left: 10px;
 }
+

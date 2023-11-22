@@ -9,6 +9,7 @@
 
 .custom-table {
   width: 100%;
+  background-color: lightgray;
   border-collapse: collapse;
   border: 2px solid #1E3D58; 
   margin-bottom: 20px;
