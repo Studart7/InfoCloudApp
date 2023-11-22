@@ -1,28 +1,26 @@
 import React, { useRef } from 'react';
+
 import { useTable } from 'react-table';
 import { CSVLink } from 'react-csv';
+
 import html2canvas from 'html2canvas';
 import './styles.css';
 
-const data = [
-  { id: '19/08/2023 12:30', min5: '0,1', min10: '0,0', min15: '0,2', min30: '0,0', h1: '0,0', h2: '0,0', h3: '0,0', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0'},
+const dados = [
+  { id: '19/08/2023 12:30', min5: '0,1', min10: '0,0', min15: '0,2', min30: '0,0', h1: '0,0', h2: '0,0', h3: '0,0', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0' },
   { id: '19/08/2023 13:00', min5: '0,0', min10: '0,3', min15: '0,0', min30: '0,0', h1: '0,0', h2: '0,0', h3: '0,0', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0'},
   { id: '19/08/2023 13:30', min5: '0,0', min10: '0,0', min15: '0,0', min30: '0,4', h1: '0,0', h2: '0,0', h3: '0,0', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0'},
   { id: '19/08/2023 14:00', min5: '0,0', min10: '0,0', min15: '0,0', min30: '0,0', h1: '0,5', h2: '0,0', h3: '0,0', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0'},
   { id: '19/08/2023 14:30', min5: '0,0', min10: '0,0', min15: '0,0', min30: '0,0', h1: '0,0', h2: '0,6', h3: '0,0', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0'},
   { id: '19/08/2023 15:00', min5: '0,0', min10: '0,0', min15: '0,0', min30: '0,0', h1: '0,0', h2: '0,0', h3: '0,7', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0'},
   { id: '19/08/2023 15:30', min5: '0,0', min10: '0,0', min15: '0,0', min30: '0,0', h1: '0,0', h2: '0,0', h3: '0,0', h4: '0,8', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0'},
-
 ];
 
-const header = { id: 'Data', min5: '5 Minutos', min10: '10 Minutos', min15: '15 Minutos', min30: '30 Minutos', h1: '1 Hora', h2: '2 Horas', h3: '3 Horas', h4: '4 Horas', h6: '6 Horas', h12: '12 Horas', h24: '24 Horas', h96: '96 Horas', mensal: 'Mensal', sla: 'SLA', chuva: 'Chuva' };
+const cabecalho = { id: 'Data', min5: '5 Minutos', min10: '10 Minutos', min15: '15 Minutos', min30: '30 Minutos', h1: '1 Hora', h2: '2 Horas', h3: '3 Horas', h4: '4 Horas', h6: '6 Horas', h12: '12 Horas', h24: '24 Horas', h96: '96 Horas', mensal: 'Mensal', sla: 'SLA', chuva: 'Chuva' };
 
-const table = [header, ...data];
+const tabela = [cabecalho, ...dados];
 
-
-
-
-const columns = [
+const colunas = [
   { Header: 'Horario', accessor: 'id' },
   { Header: '05 min', accessor: 'min5' },
   { Header: '10 min', accessor: 'min10' },
@@ -38,16 +36,15 @@ const columns = [
   { Header: '24h', accessor: 'h24' },
   { Header: '96h', accessor: 'h96' },
   { Header: 'Mensal', accessor: 'mensal' }
-  ];
-
+];
 
 const Tabela = () => {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({
-    columns,
-    data,
+    columns: colunas,
+    data: dados,
   });
 
-  const csvData = table.map(row => ({
+  const dadosCSV = tabela.map(row => ({
     Horario: row.id,
     '05 min': row.min5,
     '10 min': row.min10,
@@ -62,14 +59,14 @@ const Tabela = () => {
     '12h': row.h12,
     '24h': row.h24,
     '96h': row.h96,
-    'Mensal': row.mensal, // Corrected the capitalization
+    'Mensal': row.mensal,
   }));
 
-  const tableRef = useRef(null);
+  const refTabela = useRef(null);
 
-  const exportToJPG = () => {
-    if (tableRef.current) {
-      html2canvas(tableRef.current).then(canvas => {
+  const exportarParaJPG = () => {
+    if (refTabela.current) {
+      html2canvas(refTabela.current).then(canvas => {
         const imgData = canvas.toDataURL('image/jpeg');
         const link = document.createElement('a');
         link.href = imgData;
@@ -81,8 +78,14 @@ const Tabela = () => {
 
   return (
     <div>
-      <div className="table-header">Chuvas</div>
-      <table {...getTableProps()} className="custom-table" ref={tableRef}>
+      <div className="table-header">
+        Chuvas
+      </div>
+      <table
+        {...getTableProps()}
+        className="custom-table"
+        ref={refTabela}
+      >
         <thead>
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -122,10 +125,17 @@ const Tabela = () => {
           })}
         </tbody>
       </table>
-      <CSVLink data={csvData} filename={'tabela_export.csv'} className="button">
+      <CSVLink
+        data={dadosCSV}
+        filename={'tabela_export.csv'}
+        className="button"
+      >
         Exportar CSV
       </CSVLink>
-      <button onClick={exportToJPG} className="button">
+      <button
+        onClick={exportarParaJPG}
+        className="button"
+      >
         Exportar JPG
       </button>
     </div>

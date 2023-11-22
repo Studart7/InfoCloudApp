@@ -5,7 +5,7 @@ import './styles.css'
 function PaginaTabela() {
   return (
     <div>
-      <h1 class="texto">Tabela</h1>
+      <h1 className="texto">Tabela</h1>
       <Tabela />
     </div>
   );

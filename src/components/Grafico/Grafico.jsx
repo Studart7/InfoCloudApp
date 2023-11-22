@@ -1,22 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
+import html2canvas from 'html2canvas';
+import { CSVLink } from 'react-csv';
 
 const Grafico = () => {
-  const [selectedVariables, setSelectedVariables] = useState([
+  const [variaveisSelecionadas, setVariaveisSelecionadas] = useState([
     'reajadaDeVento',
     'velocidadeDoVento',
     'temperatura',
     'precipitacao',
   ]);
-  const chartRef = useRef(null);
+  const referenciaDoGrafico = useRef(null);
 
   useEffect(() => {
-    if (chartRef.current) {
-      if (chartRef.current.chartInstance) {
-        chartRef.current.chartInstance.destroy();
+    if (referenciaDoGrafico.current) {
+      if (referenciaDoGrafico.current.chartInstance) {
+        referenciaDoGrafico.current.chartInstance.destroy();
       }
-      const ctx = chartRef.current.getContext('2d');
-      const newChart = new Chart(ctx, {
+      const contexto = referenciaDoGrafico.current.getContext('2d');
+      const novoGrafico = new Chart(contexto, {
         type: 'bar',
         data: {
           labels: ['Data 1', 'Data 2', 'Data 3', 'Data 4', 'Data 5'],
@@ -27,7 +29,7 @@ const Grafico = () => {
               backgroundColor: 'rgba(255, 99, 132, 0.2)',
               borderColor: 'rgba(255, 99, 132, 1)',
               borderWidth: 1,
-              hidden: !selectedVariables.includes('reajadaDeVento'),
+              hidden: !variaveisSelecionadas.includes('reajadaDeVento'),
             },
             {
               label: 'Velocidade do Vento (km/h)',
@@ -35,7 +37,7 @@ const Grafico = () => {
               backgroundColor: 'rgba(54, 162, 235, 0.2)',
               borderColor: 'rgba(54, 162, 235, 1)',
               borderWidth: 1,
-              hidden: !selectedVariables.includes('velocidadeDoVento'),
+              hidden: !variaveisSelecionadas.includes('velocidadeDoVento'),
             },
             {
               label: 'Temperatura (oC)',
@@ -43,7 +45,7 @@ const Grafico = () => {
               backgroundColor: 'rgba(255, 206, 86, 0.2)',
               borderColor: 'rgba(255, 206, 86, 1)',
               borderWidth: 1,
-              hidden: !selectedVariables.includes('temperatura'),
+              hidden: !variaveisSelecionadas.includes('temperatura'),
             },
             {
               label: 'Precipitação (mm)',
@@ -51,7 +53,7 @@ const Grafico = () => {
               backgroundColor: 'rgba(75, 192, 192, 0.2)',
               borderColor: 'rgba(75, 192, 192, 1)',
               borderWidth: 1,
-              hidden: !selectedVariables.includes('precipitacao'),
+              hidden: !variaveisSelecionadas.includes('precipitacao'),
             },
           ],
         },
@@ -78,22 +80,48 @@ const Grafico = () => {
           },
         },
       });
-      chartRef.current.chartInstance = newChart;
+      referenciaDoGrafico.current.chartInstance = novoGrafico;
     }
-  }, [selectedVariables]);
+  }, [variaveisSelecionadas]);
 
-  const handleVariableToggle = (variable) => {
-    setSelectedVariables((prevSelected) => {
-      if (prevSelected.includes(variable)) {
-        return prevSelected.filter((v) => v !== variable);
-      }
-      return [...prevSelected, variable];
-    });
+  const exportarParaJPG = () => {
+    if (referenciaDoGrafico.current) {
+      html2canvas(referenciaDoGrafico.current).then(canvas => {
+        const imgData = canvas.toDataURL('image/jpeg');
+        const link = document.createElement('a');
+        link.href = imgData;
+        link.download = 'grafico_export.jpg';
+        link.click();
+      });
+    }
   };
 
+  const dadosCSV = [
+    { label: 'Data 1', value: 10 },
+    { label: 'Data 2', value: 15 },
+    { label: 'Data 3', value: 8 },
+    { label: 'Data 4', value: 12 },
+    { label: 'Data 5', value: 9 },
+  ];
+
   return (
-    <div style={{ width: '50%', margin: '0 auto', maxHeight: '500px', overflowY: 'auto' }}>
-      <canvas ref={chartRef} id="myChart" width="400" height="300"></canvas>
+    <div style={{ width: '100%', margin: '0 auto', maxHeight: '500px', overflowY: 'auto'}}>
+      <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.75)'}}>
+      <canvas ref={referenciaDoGrafico} id="meuGrafico" width="400" height="400"></canvas>
+      </div>
+      <CSVLink
+        data={dadosCSV}
+        filename={'grafico_export.csv'}
+        className="button"
+      >
+        Exportar CSV
+      </CSVLink>
+      <button
+        onClick={exportarParaJPG}
+        className="button"
+      >
+        Exportar JPG
+      </button>
     </div>
   );
 };
