@@ -49,3 +49,11 @@ body {
     margin-top: 5px;
   }
   
+  @media (max-width:768px){
+    .container{flex-direction: column;
+    height: 200vh};
+    .imagem-container {
+      margin-bottom: 100px;
+      height: 40px;
+    }
+  }

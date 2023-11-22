@@ -92,10 +92,11 @@ const Grafico = () => {
   };
 
   return (
-    <div style={{ width: '50%', margin: '0 auto', maxHeight: '500px', overflowY: 'auto' }}>
-      <canvas ref={chartRef} id="myChart" width="400" height="300"></canvas>
+    <div style={{ width: '100%', margin: '0 auto', maxHeight: '500px', overflowY: 'auto' }}>
+      <canvas ref={chartRef} id="myChart" width="400" height="400"></canvas>
     </div>
   );
 };
 
 export default Grafico;
+
