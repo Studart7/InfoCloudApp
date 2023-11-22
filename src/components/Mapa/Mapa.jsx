@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const apiKey = "AIzaSyBtSUQN0mbybcJRRPdA_m71OdHNC78d3Ss"; // Substitua com sua chave API do Google Maps
+const apiKey = process.env.REACT_APP_API_KEY; 
 
 const Mapa = () => {
   const [map, setMap] = useState(null);
@@ -25,17 +25,16 @@ const Mapa = () => {
       script.onload = null;
       document.head.removeChild(script);
     };
-  }, []); // Remova a dependência para garantir que o useEffect seja executado apenas uma vez
+  }, []); 
 
   const initializeMap = () => {
     const novoMapa = new window.google.maps.Map(ref.current, mapOptions);
     setMap(novoMapa);
 
-    // Adiciona marcadores
     const novosMarcadores = [
       { nome: "Brasília", position: { lat: -15.7801, lng: -47.9292 }, info: "Informações meteorológicas para Brasília" },
       { nome: "São Paulo", position: { lat: -23.5505, lng: -46.6333 }, info: "Informações meteorológicas para São Paulo" },
-      // Adicione mais marcadores conforme necessário
+      { nome: "Rio de Janeiro", position: { lat: -22.9068, lng: -43.1729}, info: "Informações meteorológicas para Rio de Janeiro"}
     ];
 
     const novosMarcadoresNoMapa = novosMarcadores.map(marcador =>
@@ -52,7 +51,6 @@ const Mapa = () => {
       title: nome,
     });
 
-    // Adicione qualquer lógica de evento ou personalização aqui
     marker.addListener('click', () => {
       exibirInfoWindow(marker, info);
     });
@@ -76,7 +74,6 @@ const Mapa = () => {
   return (
     <div>
       <div ref={ref} style={{ width: "100%", height: "500px" }}></div>
-      {/* Adicione qualquer outro componente ou informação aqui */}
     </div>
   );
 };
