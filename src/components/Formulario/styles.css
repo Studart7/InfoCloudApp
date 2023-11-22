@@ -5,6 +5,7 @@
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
+    background-color: white;
 }
 
 .row {
