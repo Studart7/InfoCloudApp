@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const apiKey = process.env.REACT_APP_API_KEY; 
+const chaveAPI = process.env.REACT_APP_API_KEY; 
 
 const Mapa = () => {
-  const [map, setMap] = useState(null);
+  const [mapa, setMapa] = useState(null);
   const [marcadores, setMarcadores] = useState([]);
-  const [infoWindow, setInfoWindow] = useState(null);
-  const ref = useRef();
+  const [janelaInfo, setJanelaInfo] = useState(null);
+  const referenciaDoMapa = useRef();
 
-  const mapOptions = {
+  const opcoesDoMapa = {
     mapId: '4a6ddd5aeeb08f6d',
     center: { lat: -18.235, lng: -51.925 },
     zoom: 5,
@@ -17,8 +17,8 @@ const Mapa = () => {
 
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
-    script.onload = initializeMap;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${chaveAPI}&libraries=places`;
+    script.onload = inicializarMapa;
     document.head.appendChild(script);
 
     return () => {
@@ -27,9 +27,9 @@ const Mapa = () => {
     };
   }, []); 
 
-  const initializeMap = () => {
-    const novoMapa = new window.google.maps.Map(ref.current, mapOptions);
-    setMap(novoMapa);
+  const inicializarMapa = () => {
+    const novoMapa = new window.google.maps.Map(referenciaDoMapa.current, opcoesDoMapa);
+    setMapa(novoMapa);
 
     const novosMarcadores = [
       { nome: "Brasília", position: { lat: -15.7801, lng: -47.9292 }, info: "Informações meteorológicas para Brasília" },
@@ -45,35 +45,35 @@ const Mapa = () => {
   };
 
   const criarMarcador = (mapa, { nome, position, info }) => {
-    const marker = new window.google.maps.Marker({
+    const marcador = new window.google.maps.Marker({
       position,
       map: mapa,
       title: nome,
     });
 
-    marker.addListener('click', () => {
-      exibirInfoWindow(marker, info);
+    marcador.addListener('click', () => {
+      exibirJanelaInfo(marcador, info);
     });
 
-    return marker;
+    return marcador;
   };
 
-  const exibirInfoWindow = (marker, info) => {
-    if (infoWindow) {
-      infoWindow.close();
+  const exibirJanelaInfo = (marcador, info) => {
+    if (janelaInfo) {
+      janelaInfo.close();
     }
 
-    const newInfoWindow = new window.google.maps.InfoWindow({
+    const novaJanelaInfo = new window.google.maps.InfoWindow({
       content: info,
     });
 
-    newInfoWindow.open(map, marker);
-    setInfoWindow(newInfoWindow);
+    novaJanelaInfo.open(mapa, marcador);
+    setJanelaInfo(novaJanelaInfo);
   };
 
   return (
     <div>
-      <div ref={ref} style={{ width: "100%", height: "500px" }}></div>
+      <div ref={referenciaDoMapa} style={{ width: "100%", height: "500px" }}></div>
     </div>
   );
 };
