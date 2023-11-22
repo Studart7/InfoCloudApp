@@ -1,0 +1,11 @@
+.barra-navegacao {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .link {
+    color: #fff;
+    text-decoration: none;
+  }
