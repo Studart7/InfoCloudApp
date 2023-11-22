@@ -1,45 +1,39 @@
-/* Cabeçalho acima da tabela */
 .table-header {
-    background-color: #1E3D58; /* Azul escuro */
-    color: #FFD700; /* Amarelo */
+    background-color: #1E3D58; 
+    color: #FFD700;
     padding: 10px;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
   }
   
-  /* Tabela */
   .custom-table {
     width: 100%;
     border-collapse: collapse;
-    border: 2px solid #1E3D58; /* Azul escuro */
+    border: 2px solid #1E3D58; 
     margin-bottom: 20px;
   }
   
-  /* Cabeçalho da tabela */
   .custom-table th {
-    background-color: #1E3D58; /* Azul escuro */
-    color: #FFD700; /* Amarelo */
+    background-color: #1E3D58; 
+    color: #FFD700; 
     padding: 12px;
     text-align: left;
   }
   
-  /* Linhas da tabela */
   .custom-table td {
     padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #1E3D58; /* Azul escuro */
+    border-bottom: 1px solid #1E3D58; 
   }
   
-  /* Linhas alternadas com fundo amarelo claro */
   .custom-table tbody tr:nth-child(even) {
-    background-color: #FFECB3; /* Amarelo claro */
+    background-color: #FFECB3;
   }
   
-  /* Hover sobre as linhas */
   .custom-table tbody tr:hover {
-    background-color: #FFD700; /* Amarelo */
-    color: #1E3D58; /* Azul escuro */
+    background-color: #FFD700; 
+    color: #1E3D58; 
   }
   
   .button {
@@ -53,6 +47,6 @@
     color: #ffffff;
     border: 1px solid #4caf50;
     border-radius: 4px;
-    margin-bottom: 20px; /* Increased margin-bottom for more space */
+    margin-bottom: 20px; 
     gap: 2px;
   }
