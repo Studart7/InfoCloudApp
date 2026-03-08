@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import PaginaTabela from './pages/PagTabela/PagTabela';
 import PaginaFormulario from './pages/PagFormulario/PagFormulario';
 import PaginaInicial from './pages/PaginaInicial/PagInicial';
@@ -11,7 +11,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router basename="/InfoCloudApp">
+    <Router>
       <div className="app-container">
         <BarraLink />
         <div className="page-content">
