@@ -4,9 +4,11 @@ import './styles.css';
 
 const PaginaMapa = () => {
   return (
-    <div>
-      <h1 class="texto">Mapa</h1>
-      <Mapa/>
+    <div className="map-container">
+      <h1 className="texto">Mapa</h1>
+      <div className="map-card">
+        <Mapa />
+      </div>
     </div>
   );
 };

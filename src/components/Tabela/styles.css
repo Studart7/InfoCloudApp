@@ -1,53 +1,89 @@
+/* Table Page */
+.table-container {
+  margin-top: 1rem;
+}
+
 .table-header {
-  background-color: #1E3D58; 
-  color: #FFD700;
-  padding: 10px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: #fff;
+  padding: 1rem 1.5rem;
   text-align: center;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
 .custom-table {
   width: 100%;
-  background-color: lightgray;
+  min-width: 800px;
+  /* Ensure table doesn't Squish too much */
+  background-color: var(--color-surface);
   border-collapse: collapse;
-  border: 2px solid #1E3D58; 
-  margin-bottom: 20px;
+  border: 1px solid var(--color-border);
+  margin-bottom: 0;
 }
 
 .custom-table th {
-  background-color: #1E3D58; 
-  color: #FFD700; 
-  padding: 12px;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  padding: 0.75rem 1rem;
   text-align: left;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .custom-table td {
-  padding: 10px;
+  padding: 0.75rem 1rem;
   text-align: left;
-  border-bottom: 1px solid #1E3D58; 
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
 }
 
 .custom-table tbody tr:nth-child(even) {
-  background-color: #FFECB3;
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
 .custom-table tbody tr:hover {
-  background-color: #FFD700; 
-  color: #1E3D58; 
+  background-color: rgba(37, 209, 244, 0.1);
+}
+
+.table-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 0;
 }
 
 .button {
-  display: inline-block;
-  padding: 10px 15px;
-  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  background-color: #4caf50;
+  background-color: var(--color-accent);
   color: #ffffff;
-  border: 1px solid #4caf50;
-  border-radius: 4px;
-  margin-bottom: 20px; 
-  gap: 2px;
+  border: none;
+  border-radius: 999px;
+  transition: all var(--transition);
+}
+
+.button:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }

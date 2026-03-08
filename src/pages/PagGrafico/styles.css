@@ -1,3 +1,46 @@
-h1.texto {
+/* Chart Page */
+.chart-container {
+    margin-top: 1rem;
+}
+
+.chart-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.chart-card canvas {
+    max-height: 400px;
+}
+
+.chart-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
     text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    transition: all var(--transition);
+}
+
+.button:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
 }

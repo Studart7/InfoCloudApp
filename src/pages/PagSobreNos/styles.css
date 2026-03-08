@@ -1,46 +1,85 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-image: url('https://images.unsplash.com/photo-1504253163759-c23fccaebb55?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: Arial, sans-serif;
-  }
-  
-  .pagina-sobre-nos {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  .equipe {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 20px;
-  }
-  
-  .membro-equipe {
-    text-align: center;
-    margin: 10px;
-  }
-  
-  .membro-equipe h2 {
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-  
-  .membro-equipe p {
-    font-size: 16px;
-  }
+/* About Us Page */
+.pagina-sobre-nos {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+}
 
-  .logo-equipe {
-    width: 50%; 
-    max-width: 400px; 
-    height: auto;
-    margin-bottom: 0px;
+.pagina-sobre-nos h1.texto {
+  padding-bottom: 0.5rem;
+}
+
+.pagina-sobre-nos h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+.logo-equipe {
+  width: 180px;
+  height: auto;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.equipe {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.membro-equipe {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  text-align: center;
+  transition: all var(--transition);
+}
+
+.membro-equipe:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.membro-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 auto 0.75rem;
+}
+
+.membro-equipe h2 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--color-text);
+  font-style: normal;
+}
+
+.membro-equipe p {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .equipe {
+    grid-template-columns: 1fr;
   }
+}
