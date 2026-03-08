@@ -11,7 +11,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/InfoCloudApp">
       <div className="app-container">
         <BarraLink />
         <div className="page-content">
