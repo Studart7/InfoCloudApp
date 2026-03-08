@@ -24,35 +24,39 @@ const Grafico = () => {
           labels: ['Data 1', 'Data 2', 'Data 3', 'Data 4', 'Data 5'],
           datasets: [
             {
-              label: 'Reajada de Vento (km/h)',
+              label: 'Rajada de Vento (km/h)',
               data: [10, 15, 8, 12, 9],
-              backgroundColor: 'rgba(255, 99, 132, 0.2)',
-              borderColor: 'rgba(255, 99, 132, 1)',
+              backgroundColor: 'rgba(59, 130, 246, 0.2)',
+              borderColor: 'rgba(59, 130, 246, 1)',
               borderWidth: 1,
+              borderRadius: 4,
               hidden: !variaveisSelecionadas.includes('reajadaDeVento'),
             },
             {
               label: 'Velocidade do Vento (km/h)',
               data: [7, 11, 5, 8, 3],
-              backgroundColor: 'rgba(54, 162, 235, 0.2)',
-              borderColor: 'rgba(54, 162, 235, 1)',
+              backgroundColor: 'rgba(16, 185, 129, 0.2)',
+              borderColor: 'rgba(16, 185, 129, 1)',
               borderWidth: 1,
+              borderRadius: 4,
               hidden: !variaveisSelecionadas.includes('velocidadeDoVento'),
             },
             {
-              label: 'Temperatura (oC)',
+              label: 'Temperatura (°C)',
               data: [20, 22, 18, 25, 19],
-              backgroundColor: 'rgba(255, 206, 86, 0.2)',
-              borderColor: 'rgba(255, 206, 86, 1)',
+              backgroundColor: 'rgba(245, 158, 11, 0.2)',
+              borderColor: 'rgba(245, 158, 11, 1)',
               borderWidth: 1,
+              borderRadius: 4,
               hidden: !variaveisSelecionadas.includes('temperatura'),
             },
             {
               label: 'Precipitação (mm)',
               data: [5, 8, 3, 6, 4],
-              backgroundColor: 'rgba(75, 192, 192, 0.2)',
-              borderColor: 'rgba(75, 192, 192, 1)',
+              backgroundColor: 'rgba(99, 102, 241, 0.2)',
+              borderColor: 'rgba(99, 102, 241, 1)',
               borderWidth: 1,
+              borderRadius: 4,
               hidden: !variaveisSelecionadas.includes('precipitacao'),
             },
           ],
@@ -62,20 +66,42 @@ const Grafico = () => {
           maintainAspectRatio: false,
           layout: {
             padding: {
-              left: 50,
-              right: 50,
-              top: 50,
-              bottom: 50,
+              left: 20,
+              right: 20,
+              top: 20,
+              bottom: 20,
             },
           },
           plugins: {
             legend: {
               position: 'bottom',
+              labels: {
+                font: {
+                  family: 'Inter',
+                  size: 12,
+                },
+                padding: 16,
+                usePointStyle: true,
+              },
             },
           },
           scales: {
             y: {
               beginAtZero: true,
+              grid: {
+                color: 'rgba(0, 0, 0, 0.05)',
+              },
+              ticks: {
+                font: { family: 'Inter', size: 11 },
+              },
+            },
+            x: {
+              grid: {
+                display: false,
+              },
+              ticks: {
+                font: { family: 'Inter', size: 11 },
+              },
             },
           },
         },
@@ -105,23 +131,25 @@ const Grafico = () => {
   ];
 
   return (
-    <div style={{ width: '100%', margin: '0 auto', maxHeight: '500px', overflowY: 'auto'}}>
-      <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.75)'}}>
-      <canvas ref={referenciaDoGrafico} id="meuGrafico" width="400" height="400"></canvas>
+    <div>
+      <div style={{ maxHeight: '420px' }}>
+        <canvas ref={referenciaDoGrafico} id="meuGrafico" width="400" height="400"></canvas>
       </div>
-      <CSVLink
-        data={dadosCSV}
-        filename={'grafico_export.csv'}
-        className="button"
-      >
-        Exportar CSV
-      </CSVLink>
-      <button
-        onClick={exportarParaJPG}
-        className="button"
-      >
-        Exportar JPG
-      </button>
+      <div className="chart-actions">
+        <CSVLink
+          data={dadosCSV}
+          filename={'grafico_export.csv'}
+          className="button"
+        >
+          Exportar CSV
+        </CSVLink>
+        <button
+          onClick={exportarParaJPG}
+          className="button"
+        >
+          Exportar JPG
+        </button>
+      </div>
     </div>
   );
 };

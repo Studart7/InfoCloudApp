@@ -4,9 +4,11 @@ import './styles.css';
 
 function PaginaGrafico() {
   return (
-    <div>
-      <h1 class="texto">Grafico</h1>
-      <Grafico/>
+    <div className="chart-container">
+      <h1 className="texto">Gráfico</h1>
+      <div className="chart-card">
+        <Grafico />
+      </div>
     </div>
   );
 }

@@ -2,74 +2,142 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles.css';
 
+const features = [
+  {
+    to: '/tabela',
+    title: 'Tabela',
+    desc: 'Visualização estruturada de registros históricos e atuais.',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <path d="M3 9h18" />
+        <path d="M3 15h18" />
+        <path d="M9 3v18" />
+      </svg>
+    ),
+  },
+  {
+    to: '/formulario',
+    title: 'Formulário',
+    desc: 'Entrada de dados e parametrização de consultas.',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 20h9" />
+        <path d="M16.5 3.5a2.121 2.121 0 1 1 3 3L7 19l-4 1 1-4Z" />
+      </svg>
+    ),
+  },
+  {
+    to: '/mapa',
+    title: 'Mapa',
+    desc: 'Geolocalização e pontos de monitoramento interativos.',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
+        <line x1="8" y1="2" x2="8" y2="18" />
+        <line x1="16" y1="6" x2="16" y2="22" />
+      </svg>
+    ),
+  },
+  {
+    to: '/grafico',
+    title: 'Gráfico',
+    desc: 'Análise de tendências com gráficos interativos.',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="18" y1="20" x2="18" y2="10" />
+        <line x1="12" y1="20" x2="12" y2="4" />
+        <line x1="6" y1="20" x2="6" y2="14" />
+      </svg>
+    ),
+  },
+  {
+    to: '/sobre-nos',
+    title: 'Sobre Nós',
+    desc: 'Conheça a equipe por trás do Projeto Nimbus.',
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+  },
+];
+
 const PaginaInicial = () => {
   return (
-    <div>
-      <div className="topo">
-        <h1>Bem Vindo ao Projeto Nimbus</h1>
-        <img
-          src="https://cdn.discordapp.com/attachments/970394629646217258/1170834309880492132/30141693065__1_-removebg-preview.png?ex=656cf06c&is=655a7b6c&hm=8f5e8fe068c94527b38e2a6a222fc82fcddc00e2d6d91d31320ea14376c76788&" // Substitua pela URL da sua imagem
-          alt="Projeto Nimbus Logo"
-          className="logo"
-        />
-      </div>
+    <div className="home-dark">
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-glow" />
+        <div className="hero-content">
+          <div className="hero-badge">
+            <span className="ping-dot">
+              <span className="ping-ring" />
+              <span className="ping-core" />
+            </span>
+            Dados em tempo real
+          </div>
 
-      <div className="container">
-        <div className="imagem-container">
-          <Link to="/tabela">
-            <img
-              src="https://media.istockphoto.com/id/1388741354/pt/vetorial/spreadsheet-editing-app-illustration-flat-design-editable-vector.jpg?s=612x612&w=0&k=20&c=7Vp05AxPVrSRcT-92Ej3kPnyR-aABtKZKuRLCOkQwEU="
-              alt="Ir para Tabela"
-              className="imagem"
-            />
-            <p className="legenda">Ir para Tabela</p>
-          </Link>
+          <h1 className="hero-title">
+            Projeto <span className="gradient-text">Nimbus</span>
+          </h1>
+
+          <p className="hero-subtitle">
+            Plataforma de dados meteorológicos — visualize, analise e exporte
+            informações climáticas de forma intuitiva com processamento de alta
+            fidelidade.
+          </p>
+
+          <div className="hero-actions">
+            <Link to="/tabela" className="cta-button">
+              Explorar Dados
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </Link>
+            <a
+              href="https://github.com/DaviJCB/InfoCloud/tree/main"
+              className="cta-button-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Documentação
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Cards Section */}
+      <section className="features-section">
+        <div className="features-header">
+          <h2>Nossas Funcionalidades</h2>
+          <p>Ferramentas para análise climática profunda.</p>
         </div>
 
-        <div className="imagem-container">
-          <Link to="/formulario">
-            <img
-              src="https://www.vargemgrandepaulista.sp.gov.br/tarifazero/imagens/telas%20cadastro-cadastro.png"
-              alt="Ir para Formulário"
-              className="imagem"
-            />
-            <p className="legenda">Ir para Formulário</p>
-          </Link>
+        <div className="features-grid">
+          {features.map((f) => (
+            <Link to={f.to} key={f.to} className="glass-card feature-card">
+              <div className="feature-icon">{f.icon}</div>
+              <div className="feature-info">
+                <h3>{f.title}</h3>
+                <p>{f.desc}</p>
+              </div>
+            </Link>
+          ))}
         </div>
+      </section>
 
-        <div className="imagem-container">
-          <Link to="/mapa">
-            <img
-              src="https://images.vexels.com/media/users/3/207228/isolated/lists/affec54749806d2752556ed7e77378c6-traco-colorido-do-icone-da-localizacao-do-mapa.png"
-              alt="Ir para o Mapa"
-              className="imagem"
-            />
-            <p className="legenda">Ir para o Mapa</p>
-          </Link>
+      {/* Footer */}
+      <footer className="home-footer">
+        <div className="footer-inner">
+          <span className="footer-brand">☁️ Nimbus</span>
+          <p>© 2024 Projeto Nimbus. Todos os direitos reservados.</p>
         </div>
-
-        <div className="imagem-container">
-          <Link to="/grafico">
-            <img
-              src="https://images.vexels.com/media/users/3/141613/isolated/preview/3a72deb308b1fdefd6ac915d9772df44-area-de-desenho-de-grafico.png"
-              alt="Ir para o Grafico"
-              className="imagem"
-            />
-            <p className="legenda">Ir para o Grafico</p>
-          </Link>
-        </div>
-
-        <div className="imagem-container">
-          <Link to="/sobre-nos">
-            <img
-              src="https://perception.net.br/en/img/B/icons/quemsomos.png"
-              alt="Ir para o Mapa"
-              className="imagem"
-            />
-            <p className="legenda">Sobre Nós</p>
-          </Link>
-        </div>
-      </div>
+      </footer>
     </div>
   );
 };

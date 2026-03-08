@@ -8,12 +8,12 @@ import './styles.css';
 
 const dados = [
   { id: '19/08/2023 12:30', min5: '0,1', min10: '0,0', min15: '0,2', min30: '0,0', h1: '0,0', h2: '0,0', h3: '0,0', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0' },
-  { id: '19/08/2023 13:00', min5: '0,0', min10: '0,3', min15: '0,0', min30: '0,0', h1: '0,0', h2: '0,0', h3: '0,0', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0'},
-  { id: '19/08/2023 13:30', min5: '0,0', min10: '0,0', min15: '0,0', min30: '0,4', h1: '0,0', h2: '0,0', h3: '0,0', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0'},
-  { id: '19/08/2023 14:00', min5: '0,0', min10: '0,0', min15: '0,0', min30: '0,0', h1: '0,5', h2: '0,0', h3: '0,0', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0'},
-  { id: '19/08/2023 14:30', min5: '0,0', min10: '0,0', min15: '0,0', min30: '0,0', h1: '0,0', h2: '0,6', h3: '0,0', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0'},
-  { id: '19/08/2023 15:00', min5: '0,0', min10: '0,0', min15: '0,0', min30: '0,0', h1: '0,0', h2: '0,0', h3: '0,7', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0'},
-  { id: '19/08/2023 15:30', min5: '0,0', min10: '0,0', min15: '0,0', min30: '0,0', h1: '0,0', h2: '0,0', h3: '0,0', h4: '0,8', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0'},
+  { id: '19/08/2023 13:00', min5: '0,0', min10: '0,3', min15: '0,0', min30: '0,0', h1: '0,0', h2: '0,0', h3: '0,0', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0' },
+  { id: '19/08/2023 13:30', min5: '0,0', min10: '0,0', min15: '0,0', min30: '0,4', h1: '0,0', h2: '0,0', h3: '0,0', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0' },
+  { id: '19/08/2023 14:00', min5: '0,0', min10: '0,0', min15: '0,0', min30: '0,0', h1: '0,5', h2: '0,0', h3: '0,0', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0' },
+  { id: '19/08/2023 14:30', min5: '0,0', min10: '0,0', min15: '0,0', min30: '0,0', h1: '0,0', h2: '0,6', h3: '0,0', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0' },
+  { id: '19/08/2023 15:00', min5: '0,0', min10: '0,0', min15: '0,0', min30: '0,0', h1: '0,0', h2: '0,0', h3: '0,7', h4: '0,0', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0' },
+  { id: '19/08/2023 15:30', min5: '0,0', min10: '0,0', min15: '0,0', min30: '0,0', h1: '0,0', h2: '0,0', h3: '0,0', h4: '0,8', h5: '0,0', h6: '0,0', h12: '0,0', h24: '0,0', h96: '0,0', mensal: '0,0', sla: '0,0' },
 ];
 
 const cabecalho = { id: 'Data', min5: '5 Minutos', min10: '10 Minutos', min15: '15 Minutos', min30: '30 Minutos', h1: '1 Hora', h2: '2 Horas', h3: '3 Horas', h4: '4 Horas', h6: '6 Horas', h12: '12 Horas', h24: '24 Horas', h96: '96 Horas', mensal: 'Mensal', sla: 'SLA', chuva: 'Chuva' };
@@ -81,50 +81,52 @@ const Tabela = () => {
       <div className="table-header">
         Chuvas
       </div>
-      <table
-        {...getTableProps()}
-        className="custom-table"
-        ref={refTabela}
-      >
-        <thead>
-          {headerGroups.map(headerGroup => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map(column => (
-                <th
-                  {...column.getHeaderProps()}
-                  style={{
-                    padding: '8px',
-                    textAlign: 'left',
-                    borderBottom: '1px solid #ddd',
-                  }}
-                >
-                  {column.render('Header')}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {rows.map(row => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map(cell => (
-                  <td
-                    {...cell.getCellProps()}
+      <div className="table-responsive">
+        <table
+          {...getTableProps()}
+          className="custom-table"
+          ref={refTabela}
+        >
+          <thead>
+            {headerGroups.map(headerGroup => (
+              <tr {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map(column => (
+                  <th
+                    {...column.getHeaderProps()}
                     style={{
                       padding: '8px',
+                      textAlign: 'left',
                       borderBottom: '1px solid #ddd',
                     }}
                   >
-                    {cell.render('Cell')}
-                  </td>
+                    {column.render('Header')}
+                  </th>
                 ))}
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
+            ))}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {rows.map(row => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map(cell => (
+                    <td
+                      {...cell.getCellProps()}
+                      style={{
+                        padding: '8px',
+                        borderBottom: '1px solid #ddd',
+                      }}
+                    >
+                      {cell.render('Cell')}
+                    </td>
+                  ))}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
       <CSVLink
         data={dadosCSV}
         filename={'tabela_export.csv'}

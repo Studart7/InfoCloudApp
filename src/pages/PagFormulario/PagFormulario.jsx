@@ -4,8 +4,8 @@ import './styles.css';
 
 function PaginaFormulario() {
   return (
-    <div>
-      <h1 class='texto'>Formulário de Requisição Meteorológica</h1>
+    <div className="form-container">
+      <h1 className="texto">Formulário de Requisição Meteorológica</h1>
       <Formulario />
     </div>
   );
