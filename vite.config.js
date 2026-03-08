@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/InfoCloudApp/',
   resolve: {
     alias: {
       'react': path.resolve(__dirname, './node_modules/react'),
